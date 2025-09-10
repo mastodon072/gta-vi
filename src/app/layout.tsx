@@ -1,15 +1,31 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import Header from "./components/home-page/header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const artDecoNormal = localFont({
+  src: "./fonts/145d7d15e4d79baa-s.p.woff",
+  display: "swap",
+  variable: "--font-art-deco-normal",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const artDecoSemibold = localFont({
+  src: "./fonts/1927f68609cd9595-s.p.woff",
+  display: "swap",
+  variable: "--font-art-deco-semibold",
+});
+
+const artDecoCondensedBold = localFont({
+  src: "./fonts/7c47f8730b74dd15-s.p.woff",
+  display: "swap",
+  variable: "--font-art-deco-condensed-bold",
+});
+
+const artDecoBold = localFont({
+  src: "./fonts/67cd960e7f9dc604-s.p.woff",
+  display: "swap",
+  variable: "--font-art-deco-bold",
 });
 
 export const metadata: Metadata = {
@@ -25,8 +41,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`antialiased custom-scrollbar ${artDecoNormal.variable} ${artDecoSemibold.variable} ${artDecoCondensedBold.variable} ${artDecoBold.variable}`}
       >
+        <Header />
         {children}
       </body>
     </html>
