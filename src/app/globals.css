@@ -59,3 +59,8 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: theme("colors.gray.500");
 }
+
+.mask-wrapper {
+  mask-image: url("/assets/images/big-hero-text.svg");
+  mask-repeat: no-repeat;
+}

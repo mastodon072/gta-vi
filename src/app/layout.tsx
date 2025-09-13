@@ -44,7 +44,9 @@ export default function RootLayout({
         className={`antialiased custom-scrollbar ${artDecoNormal.variable} ${artDecoSemibold.variable} ${artDecoCondensedBold.variable} ${artDecoBold.variable}`}
       >
         <Header />
-        {children}
+        <div id="smooth-wrapper">
+          <div id="smooth-content">{children}</div>
+        </div>
       </body>
     </html>
   );
