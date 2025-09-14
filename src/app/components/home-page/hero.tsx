@@ -7,6 +7,7 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { useMaskSettings } from "@/app/hooks/useMaskSettings";
 import { ComingSoon } from "./coming";
 import { ViceCityText } from "./vice-city-text";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -24,7 +25,7 @@ export const Hero = () => {
         scrub: 2.5,
         pin: true,
         anticipatePin: 1,
-        markers: true,
+        // markers: true,
       },
     });
 
@@ -45,15 +46,15 @@ export const Hero = () => {
       )
 
       .to("#gta-vi-logo", { opacity: 1, duration: 0.1 }, "<0.1")
-      .to(
-        "#gta-vi-logo-overlay-gradient",
-        {
-          backgroundImage:
-            "radial-gradient(circle at 50% -150%, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%)",
-          immediateRender: false,
-        },
-        "<"
-      )
+      // .to(
+      //   "#gta-vi-logo-overlay-gradient",
+      //   {
+      //     backgroundImage:
+      //       "radial-gradient(circle at 50% -150%, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%)",
+      //     immediateRender: false,
+      //   },
+      //   "<"
+      // )
       .to("#coming-soon-footer", { opacity: 1, duration: 0.1 }, "<0.1")
       .to(
         "#coming-soon-inner",
@@ -65,16 +66,44 @@ export const Hero = () => {
         },
         "<0.05"
       )
+      .to(
+        "#vice-city",
+        {
+          opacity: 1,
+          duration: 0.1,
+          immediateRender: false,
+        },
+        "<0.5"
+      )
       .to("#vice-city-text", {
-        opacity: 1,
-        duration: 1.5,
+        duration: 0.1,
+        backgroundImage:
+          "radial-gradient(circle at 46.5909% 131.818vh, rgb(255, 199, 127) 0%, rgb(233, 66, 120) 33.75%, rgb(114, 31, 101) 53.8636%, rgba(32, 31, 66, 0) 84.0909%)",
+        immediateRender: false,
+      })
+      .to("#vice-city-text", {
+        duration: 1.2,
+        scale: 0.8,
         backgroundImage:
           "radial-gradient(circle at 40.73% 15vh, rgb(255, 181, 134) 0%, rgb(250, 80, 73) 65%, rgb(152, 45, 105) 95%, rgba(32, 31, 66, 0) 143%)",
       })
+      .to(
+        "#vice-city",
+        {
+          background: "rgba(0,0,0,0)",
+          duration: 0.1,
+        },
+        "<0.5"
+      )
       .to("#vice-city-text", {
         maskImage:
           "radial-gradient(at 20% -120vh, rgb(0, 0, 0) 0vh, rgba(0, 0, 0, 0) 50vh)",
-      });
+      })
+      .to(
+        "#scroll-down-indicator, #coming-soon, #vice-city",
+        { opacity: 0 },
+        "<"
+      );
 
     scrollTl
       .fromTo("#hero", { scale: 1.25 }, { scale: 1 })

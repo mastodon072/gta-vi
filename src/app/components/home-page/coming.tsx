@@ -3,7 +3,10 @@ import React from "react";
 
 export const ComingSoon = () => {
   return (
-    <div id="coming-soon" className="absolute inset-0  bg-black text-white">
+    <div
+      id="coming-soon"
+      className="absolute inset-0 z-[5] bg-black text-white"
+    >
       <div
         id="coming-soon-inner"
         className="p-20 flex flex-col justify-center items-center z-[0] scale-125 opacity-0"

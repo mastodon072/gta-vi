@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { useEffect } from "react";
+import { FirstVideo } from "./first-video";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -16,6 +17,7 @@ export const HomePage = () => {
   return (
     <div>
       <Hero />
+      <FirstVideo />
       {/* <Loader /> */}
       <div className="h-[200vh]">
         Extra space to enable scrolling for demo purposes.
